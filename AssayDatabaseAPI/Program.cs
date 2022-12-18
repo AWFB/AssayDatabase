@@ -1,4 +1,5 @@
 using AssayDatabaseAPI.Extensions;
+using AssayDatabaseAPI.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,8 @@ builder.Services.AddAppServices(builder.Configuration);
 builder.Services.AddIdentityServices(builder.Configuration);
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseCors(policyBuilder => policyBuilder
     .AllowAnyHeader()

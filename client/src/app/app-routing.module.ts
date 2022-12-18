@@ -6,6 +6,8 @@ import {LaboratoriesDetailComponent} from "./components/laboratories/laboratorie
 import {AssayListComponent} from "./components/assays/assay-list/assay-list.component";
 import {AssayDetailComponent} from "./components/assays/assay-detail/assay-detail.component";
 import {AuthGuard} from "./guards/auth.guard";
+import {NotFoundComponent} from "./errors/not-found/not-found.component";
+import {ServerErrorComponent} from "./errors/server-error/server-error.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -20,7 +22,9 @@ const routes: Routes = [
 
   {path: 'assays', component: AssayListComponent},
   {path: 'assays/:id', component: AssayDetailComponent},
-  {path: '**', component: HomeComponent, pathMatch: 'full'},
+  {path: 'not-found', component: NotFoundComponent},
+  {path: 'server-error', component: ServerErrorComponent},
+  {path: '**', component: NotFoundComponent, pathMatch: 'full'},
 
 ];
 
