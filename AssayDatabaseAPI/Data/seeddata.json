@@ -1,0 +1,64 @@
+[
+  {
+    "UserName": "Pine Wheat NHS Trust",
+    "FullName": "William Riker",
+    "Email":"riker@pinewheat.com",
+    "Assays": [
+      {
+        "NameOfTest": "Flecainide",
+        "TestNameAlias":"Flec",
+        "AddressLineOne":"15 Hospital Lane",
+        "AddressLineTwo":"Oakwood",
+        "City":"Derby",
+        "County":"Derbyshire",
+        "Country":"England",
+        "PostCode":"DE1 1BZ",
+        "ContactNumber":"01332 666222",
+        "Email":"dutybiochemist@pinewheat.com",
+        "ContactName":"Reg Barcley",
+        "SampleType":"Serum / Lithium Hep",
+        "SampleVolume":"500ul",
+        "StorageConditions": "Fridge",
+        "TransportConditions": "Ambient",
+        "NpexSupport": false,
+        "AutoComment":"200 – 800 ug/L Target range is for a trough level. Time taken to reach steady state is >3 days.",
+        "TurnAroundTime":"5 working days",
+        "UkasAccredited":true,
+        "AccreditationNumber":"12345",
+        "EqaScheme": true,
+        "Comments":"Flecainide is a medication used to prevent and treat abnormally fast heart rates."
+      }
+    ]
+  },
+  {
+    "UserName":"Oak Corn Hospital",
+    "FullName":"Geordi La Forge",
+    "Email":"Geordi@oakcorn.com",
+    "Assays": [
+      {
+        "NameOfTest": "Elastase",
+        "TestNameAlias":"neutrophil elastase",
+        "AddressLineOne":"702 Crown Street",
+        "AddressLineTwo":"City Centre",
+        "City":"Derby",
+        "County":"Derbyshire",
+        "Country":"England",
+        "PostCode":"De41 9BB",
+        "ContactNumber": "01332 662 6662",
+        "Email": "Worf@oakcorn.com",
+        "ContactName": "Worf, son of Mogh",
+        "SampleType":"Faeces",
+        "SampleVolume":"Pea-sized",
+        "StorageConditions":"Frozen",
+        "TransportConditions":"Ambient",
+        "NpexSupport":true,
+        "AutoComment":"<100ug/E1/g stool confirmed on repeat analysis",
+        "TurnAroundTime":"14 working days",
+        "UkasAccredited":true,
+        "AccreditationNumber": "54321",
+        "EqaScheme":true,
+        "Comments": "Watery samples sent to Birmingham (dry slide method)"
+      }
+    ]
+  }
+]

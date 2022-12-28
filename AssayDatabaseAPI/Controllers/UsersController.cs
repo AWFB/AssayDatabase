@@ -1,5 +1,8 @@
 ﻿using AssayDatabaseAPI.Data;
+using AssayDatabaseAPI.DTOs;
+using AssayDatabaseAPI.Interfaces;
 using AssayDatabaseAPI.Models;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,25 +12,27 @@ namespace AssayDatabaseAPI.Controllers;
 [Route("api/[controller]")]
 public class UsersController : BaseApiController
 {
-    private readonly DataContext _context;
+    private readonly IUserRepo _userRepo;
+    private readonly IMapper _mapper;
 
-    public UsersController(DataContext context)
+    public UsersController(IUserRepo userRepo, IMapper mapper)
     {
-        _context = context;
+        _userRepo = userRepo;
+        _mapper = mapper;
     }
 
     [HttpGet]
     // Action result gives access to standard http responses
-    public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers() // list of all users
+    public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers() // list of all users
     {
-        var users = await _context.Users.ToListAsync();
-        return users;
+        var users = await _userRepo.GetMembersAsync();
+
+        return Ok(users);
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<AppUser>> GetUser(int id)
+    public async Task<ActionResult<MemberDto>> GetUser(int id)
     {
-        var user = await _context.Users.FindAsync(id);
-        return user;
+        return await _userRepo.GetMemberAsync(id);
     }
 }
